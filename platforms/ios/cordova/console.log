@@ -1,12 +1,12 @@
-2014-10-06 10:36:02.886 HelloWorld[16303:79429] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/salse/Library/Developer/CoreSimulator/Devices/F187C205-8DCD-4862-90C2-B487E109ED97/data/Containers/Data/Application/74B6BCE4-94B5-412E-9B85-179B341A904A/Library/Cookies/Cookies.binarycookies
-2014-10-06 10:36:02.970 HelloWorld[16303:79429] Multi-tasking -> Device: YES, App: YES
-2014-10-06 10:36:02.987 HelloWorld[16303:79429] Unlimited access to network resources
-2014-10-06 10:36:02.989 HelloWorld[16303:79429] 
+2014-10-06 10:56:14.701 HelloWorld[25187:121013] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/salse/Library/Developer/CoreSimulator/Devices/F187C205-8DCD-4862-90C2-B487E109ED97/data/Containers/Data/Application/ADA54746-1AA7-49BC-ACAC-B51ACBD2ACFF/Library/Cookies/Cookies.binarycookies
+2014-10-06 10:56:14.787 HelloWorld[25187:121013] Multi-tasking -> Device: YES, App: YES
+2014-10-06 10:56:14.791 HelloWorld[25187:121013] Unlimited access to network resources
+2014-10-06 10:56:14.792 HelloWorld[25187:121013] 
 
 Started backup to iCloud! Please be careful.
 Your application might rejected by Apple if you store too much data.
 For more information please read "iOS Data Storage Guidelines"
 You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
 
-2014-10-06 10:36:03.341 HelloWorld[16303:79429] Resetting plugins due to page load.
-2014-10-06 10:36:03.539 HelloWorld[16303:79429] Finished load of: file:///Users/salse/Library/Developer/CoreSimulator/Devices/F187C205-8DCD-4862-90C2-B487E109ED97/data/Containers/Bundle/Application/242DEF05-2F6B-4F99-B4DA-169C31BC0A40/HelloWorld.app/www/index.html
+2014-10-06 10:56:14.952 HelloWorld[25187:121013] Resetting plugins due to page load.
+2014-10-06 10:56:15.053 HelloWorld[25187:121013] Finished load of: file:///Users/salse/Library/Developer/CoreSimulator/Devices/F187C205-8DCD-4862-90C2-B487E109ED97/data/Containers/Bundle/Application/3E090AAD-B132-484D-96E5-43900D3E24B0/HelloWorld.app/www/index.html
