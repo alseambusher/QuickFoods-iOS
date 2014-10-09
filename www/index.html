@@ -60,9 +60,9 @@
  	</ons-toolbar>
   	<ons-tabbar position="top">
 		<ons-tab page="home.html" icon="ion-home" label="Home" active="true"></ons-tab>
- 		<ons-tab icon="ion-chatbox-working"></ons-tab>
- 		<ons-tab icon="ion-ios7-pricetag"></ons-tab>
- 		<ons-tab icon="ion-ios7-cog"></ons-tab>
+ 		<ons-tab icon="ion-chatbox-working" label="History"></ons-tab>
+ 		<ons-tab icon="ion-ios7-pricetag" label="Offers"></ons-tab>
+ 		<ons-tab icon="ion-ios7-cog" label="Settings"></ons-tab>
   	</ons-tabbar>
     </ons-page>
   </ons-navigator>
@@ -70,11 +70,13 @@
   <ons-template id="home.html">
    <ons-page ng-controller="MasterController">
       <ons-list>
-     	<div style="text-align: center">
-          <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
-      	  <input type="number" class="text-input--underbar" placeholder="(+91)"/>
-	  <ons-button modifier="outline">Charge</ons-button>
+
+     	<div style="text-align: center;margin-top:5px;">
+          <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc;padding-top:10px;"></ons-icon>
+      	  <input type="number" style="width:80%;height:40px;" class="text-input--underbar" placeholder="(+91)"/>
+	  <ons-button modifier="large">Quick Charge</ons-button>
 	</div>
+
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
             <ons-col width="60px"> 
@@ -90,7 +92,6 @@
           </ons-row>                          
         </ons-list-item>
       </ons-list>
-   </ons-page>
   </ons-template>
 
   <ons-template id="detail.html">
