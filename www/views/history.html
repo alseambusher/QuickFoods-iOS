@@ -1,0 +1,33 @@
+  <ons-template id="history.html">
+   <ons-page ng-controller="HistoryController">
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">History</div>
+    </ons-toolbar>
+      <ons-list>
+
+     	<div style="text-align:center; margin-top:5px;">
+	  <center>
+      	    <input type="search" class="search-input" placeholder="Filter"/>
+	  </center>
+	</div>
+
+	<div class="list__header" style="margin:5px;">Results</div>
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+          <ons-row>
+            <ons-col width="60px"> 
+              <div class="item-thum"></div>
+            </ons-col>
+            <ons-col>
+              <header>
+                <span class="item-title">{{item.title}}</span>
+                <span class="item-label">{{item.label}}</span>
+              </header>
+              <p class="item-desc">{{item.desc}}</p>
+            </ons-col>
+          </ons-row>                          
+        </ons-list-item>
+      </ons-list>
+  </ons-template>
