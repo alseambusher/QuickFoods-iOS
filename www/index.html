@@ -5,7 +5,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
 
-  <title>Stay Charged</title>  
+  <title>Intuit Hotel Manager</title>  
   
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
   <link rel="stylesheet" href="styles/app.css"/>
@@ -26,17 +26,136 @@
 
   <ons-navigator>
     <ons-page>
- 	<ons-toolbar>
- 		<div class="center">Stay Charged</div>
+      <ons-sliding-menu
+                  above-page="takeOrder.html"
+                  behind-page="menu.html"       
+                  side="left"
+                  max-slide-distance="250px"
+                  var="menu">
+      </ons-sliding-menu>
+
+ 	<!--<ons-toolbar>
+ 		<div class="center">Hotel Manager</div>
  	</ons-toolbar>
   	<ons-tabbar position="top">
 		<ons-tab page="home.html" icon="ion-home" label="Home" active="true"></ons-tab>
  		<ons-tab page="history.html" icon="ion-chatbox-working" label="History"></ons-tab>
  		<ons-tab icon="ion-ios7-pricetag" label="Offers"></ons-tab>
  		<ons-tab page="settings.html" icon="ion-ios7-cog" label="Settings"></ons-tab>
-  	</ons-tabbar>
+  	</ons-tabbar>-->
     </ons-page>
   </ons-navigator>
+
+<ons-template id="menu.html">
+  <ons-list>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">
+    Take Order
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('kitchen.html', {closeMenu: true})">
+    Kitchen
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('history.html', {closeMenu: true})">
+    History
+    </ons-list-item>
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">
+    Settings
+    </ons-list-item>
+  </ons-list>
+</ons-template>
+
+<ons-template id="kitchen.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Kitchen</div>
+    </ons-toolbar>
+
+   <input type="text" class="text-input--underbar" placeholder="Add Filter"/><br />
+    <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
+  </ons-page>
+</ons-template>
+
+
+
+<ons-template id="takeOrder.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Take Order</div>
+    </ons-toolbar>
+
+   <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
+   <input type="search" class="search-input" placeholder="Item"/><br />
+    <p style="text-align: center; color: #999; padding-top: 100px;">Items</p>
+  </ons-page>
+</ons-template>
+
+  <ons-template id="history.html">
+   <ons-page ng-controller="HistoryController">
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">History</div>
+    </ons-toolbar>
+      <ons-list>
+
+     	<div style="text-align:center; margin-top:5px;">
+	  <center>
+      	    <input type="search" class="search-input" placeholder="Filter"/>
+	  </center>
+	</div>
+
+	<div class="list__header" style="margin:5px;">Results</div>
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+          <ons-row>
+            <ons-col width="60px"> 
+              <div class="item-thum"></div>
+            </ons-col>
+            <ons-col>
+              <header>
+                <span class="item-title">{{item.title}}</span>
+                <span class="item-label">{{item.label}}</span>
+              </header>
+              <p class="item-desc">{{item.desc}}</p>
+            </ons-col>
+          </ons-row>                          
+        </ons-list-item>
+      </ons-list>
+  </ons-template>
+
+<ons-template id="settings.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Settings</div>
+    </ons-toolbar>
+
+    <ul class="list">
+      <li class="list__item">
+	    Notifications
+    	    <label class="switch switch--list-item">
+      	      <input type="checkbox" class="switch__input" checked>
+      	      <div class="switch__toggle"></div>
+    	    </label>
+      </li>
+      <li class="list__item">
+	    Sync
+    	    <label class="switch switch--list-item">
+      	      <input type="checkbox" class="switch__input">
+      	      <div class="switch__toggle"></div>
+    	    </label>
+      </li>
+    </ul>
+  </ons-page>
+</ons-template>
 
   <ons-template id="home.html">
    <ons-page ng-controller="MasterController">
@@ -71,54 +190,7 @@
       </ons-list>
   </ons-template>
 
-  <ons-template id="history.html">
-   <ons-page ng-controller="HistoryController">
-      <ons-list>
 
-     	<div style="text-align:center; margin-top:5px;">
-	  <center>
-      	    <input type="search" style="width:80%;height:40px;" class="search-input" placeholder="Filter"/>
-	  </center>
-	</div>
-
-	<div class="list__header" style="margin:5px;">Results</div>
-        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
-          <ons-row>
-            <ons-col width="60px"> 
-              <div class="item-thum"></div>
-            </ons-col>
-            <ons-col>
-              <header>
-                <span class="item-title">{{item.title}}</span>
-                <span class="item-label">{{item.label}}</span>
-              </header>
-              <p class="item-desc">{{item.desc}}</p>
-            </ons-col>
-          </ons-row>                          
-        </ons-list-item>
-      </ons-list>
-  </ons-template>
-
-  <ons-template id="settings.html">
-    <ons-page>
-	<ul class="list">
-  	  <li class="list__item">
-	    Notifications
-    	    <label class="switch switch--list-item">
-      	      <input type="checkbox" class="switch__input" checked>
-      	      <div class="switch__toggle"></div>
-    	    </label>
-  	  </li>
-  	  <li class="list__item">
-	    Sync
-    	    <label class="switch switch--list-item">
-      	      <input type="checkbox" class="switch__input">
-      	      <div class="switch__toggle"></div>
-    	    </label>
-  	  </li>
-	</ul>
-    </ons-page>
-  </ons-template>
 
   <ons-template id="detail.html">
     <ons-page ng-controller="DetailController">
