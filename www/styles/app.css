@@ -39,4 +39,7 @@ input[type="search"] {
 #item-blue{
   background-color:rgba(8, 28, 169, 0.67);
   color:#ffffff;
+  height:80px;
+  /*padding: 30px 0px 0px 40px;*/
 }
+
