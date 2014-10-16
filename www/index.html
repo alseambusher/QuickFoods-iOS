@@ -216,7 +216,7 @@
    <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
 
   <ons-row >
-    <ons-col width="10%" align="center">
+    <ons-col width="10%" align="left">
       <select ng-model="default_categories" ng-options="category.title for category in categories">
       </select>
     </ons-col>
@@ -229,7 +229,7 @@
       <input type="number" class="text-input" placeholder="Quantity"/>
     </ons-col>
 
-    <ons-col width="10%" align="center">
+    <ons-col width="10%" align="right">
       <ons-icon icon="ion-plus-circled" style="font-size: 32px; width: 1em; color: blue"></ons-icon>
     </ons-col>
   </ons-row>
@@ -238,15 +238,16 @@
 	<div class="list__header" style="margin:5px;">Items</div>
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
-            <ons-col width="60px"> 
-              <div class="item-thum"><img src="res/pizza.jpg" style="height:100%;width:100%"/></div>
+
+            
+            <ons-col width="70%">
+                {{item.title}}
             </ons-col>
-            <ons-col>
-              <header>
-                <span class="item-title">{{item.title}}</span>
-                <span class="item-label">{{item.label}}</span>
-              </header>
-              <p class="item-desc">{{item.desc}}</p>
+            <ons-col width="10%">
+                {{item.category}}
+            </ons-col>
+            <ons-col width="20%">
+                {{item.status}}
             </ons-col>
           </ons-row>                          
         </ons-list-item>
