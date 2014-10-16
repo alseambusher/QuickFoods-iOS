@@ -15,6 +15,10 @@
   font-size: 15px;
   font-weight: 500;
 }
+.category-title {
+  font-size: 10px;
+  font-weight: 500;
+}
 .item-desc {
   font-size: 14px;
   color: #666;

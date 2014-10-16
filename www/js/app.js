@@ -37,8 +37,9 @@
 
   module.controller('TakeOrderController', function($scope, $data) {
     // todo: remove this and add actual code
-    $scope.items = $data.items;  
-    
+    $scope.items = $data.items; 
+    $scope.categories = $data.categories;  
+    $scope.default_categories = $data.categories[0].title;
     $scope.showDetail = function(index) {
       var selectedItem = $data.items[index];
       $data.selectedItem = selectedItem;
@@ -73,6 +74,19 @@
               desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
           }
       ]; 
+
+      data.categories = [
+
+          {
+              title: 'Veg'
+          },
+          {
+              title: 'Non Veg'
+          },
+          {
+              title: 'Drinks'
+          },
+      ];
       
       return data;
   });
