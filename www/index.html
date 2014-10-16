@@ -189,12 +189,30 @@
         <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
       </div>
       <div class="center">Take Order</div>
-
-
     </ons-toolbar>
 
    <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
-   <input type="search" class="search-input" placeholder="Item"/>
+
+  <ons-row >
+    <ons-col width="10%" align="center">
+      <select ng-model="default_categories" ng-options="category.title for category in categories">
+      </select>
+    </ons-col>
+
+    <ons-col width="70%" align="center">
+      <input type="search" class="search-input" placeholder="Item"/>
+    </ons-col>
+
+    <ons-col width="10%" align="center">
+      <input type="number" class="text-input" placeholder="Quantity"/>
+    </ons-col>
+
+    <ons-col width="10%" align="center">
+      <ons-icon icon="ion-plus-circled" style="font-size: 32px; width: 1em; color: blue"></ons-icon>
+    </ons-col>
+  </ons-row>
+
+   
 	<div class="list__header" style="margin:5px;">Items</div>
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
