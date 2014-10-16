@@ -39,26 +39,12 @@
 
 <ons-template id="menu.html">
   <ons-list>
-    <ons-list-item id="item-blue">
-    QuickFood
-    </ons-list-item>
-    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">
-    Take Order
-    </ons-list-item>
-    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('kitchen.html', {closeMenu: true})">
-    Kitchen
-    </ons-list-item>
-    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('history.html', {closeMenu: true})">
-    History
-    </ons-list-item>
-    </ons-list-item>
-    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">
-    Settings
-    </ons-list-item>
-    </ons-list-item>
-    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('reviews.html', {closeMenu: true})">
-    Reviews
-    </ons-list-item>
+    <ons-list-item id="item-blue">QuickFood</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">Take Order</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('kitchen.html', {closeMenu: true})">Kitchen</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('history.html', {closeMenu: true})">History</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">Settings</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('reviews.html', {closeMenu: true})">Reviews</ons-list-item>
   </ons-list>
 </ons-template>
   <ons-template id="detail.html">
@@ -157,13 +143,6 @@
       <div class="center">Reviews</div>
     </ons-toolbar>
 
-    <ons-navigator title="Navigator" var="myNavigator">
-      <ons-page>
-        <ons-toolbar>
-          <div class="center">Basic List</div>
-        </ons-toolbar>
-        <br>
-      
         <ons-list>
           <ons-list-header>Reviews</ons-list-header>
           <textarea class="textarea" cols='200' rows="3" placeholder="Textarea"></textarea>
@@ -173,11 +152,10 @@
           <button class="button--large--cta" onclick="alert('Feedback recorded!')"> Satsfied Me, reccomend</button>
 		  <button class="button button--large" onclick="alert('Feedback recorded!')">Un-Happy</button>
         </ons-list>
-      </ons-page>
-    </ons-navigator>
 	
   </ons-page>
-</ons-template><ons-template id="settings.html">
+</ons-template>
+<ons-template id="settings.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
