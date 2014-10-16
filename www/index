@@ -52,5 +52,9 @@
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">
     Settings
     </ons-list-item>
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('reviews.html', {closeMenu: true})">
+    Reviews
+    </ons-list-item>
   </ons-list>
 </ons-template>

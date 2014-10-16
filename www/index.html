@@ -52,6 +52,10 @@
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">
     Settings
     </ons-list-item>
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('reviews.html', {closeMenu: true})">
+    Reviews
+    </ons-list-item>
   </ons-list>
 </ons-template>
   <ons-template id="detail.html">
@@ -141,7 +145,36 @@
     <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
   </ons-page>
 </ons-template>
-<ons-template id="settings.html">
+<ons-template id="reviews.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Reviews</div>
+    </ons-toolbar>
+
+    <ons-navigator title="Navigator" var="myNavigator">
+      <ons-page>
+        <ons-toolbar>
+          <div class="center">Basic List</div>
+        </ons-toolbar>
+        <br>
+      
+        <ons-list>
+          <ons-list-header>Reviews</ons-list-header>
+          <textarea class="textarea" cols='200' rows="3" placeholder="Textarea"></textarea>
+        
+			<br/><br/>
+          <ons-list-header>Overall Views</ons-list-header>
+          <button class="button--large--cta" onclick="alert('Feedback recorded!')"> Satsfied Me, reccomend</button>
+		  <button class="button button--large" onclick="alert('Feedback recorded!')">Un-Happy</button>
+        </ons-list>
+      </ons-page>
+    </ons-navigator>
+	
+  </ons-page>
+</ons-template><ons-template id="settings.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
