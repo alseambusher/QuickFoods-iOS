@@ -178,6 +178,11 @@
         <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
       </div>
       <div class="center">Take Order</div>
+   <ons-tabbar position="bottom">
+	<ons-tab icon="ion-home" label="Bill"></ons-tab>
+ 	<ons-tab icon="ion-briefcase" label="Submit"></ons-tab>
+    </ons-tabbar>
+
     </ons-toolbar>
 
    <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
@@ -186,7 +191,7 @@
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
             <ons-col width="60px"> 
-              <div class="item-thum"></div>
+              <div class="item-thum"><img src="res/pizza.jpg" style="height:100%;width:100%"/></div>
             </ons-col>
             <ons-col>
               <header>
@@ -197,12 +202,13 @@
             </ons-col>
           </ons-row>                          
         </ons-list-item>
-	<!--
-     <ons-tabbar position="bottom">
+    </ons-page>
+  <ons-bottom-toolbar>
+   <ons-tabbar position="bottom">
 	<ons-tab icon="ion-home" label="Bill"></ons-tab>
  	<ons-tab icon="ion-briefcase" label="Submit"></ons-tab>
     </ons-tabbar>
-    -->
-  </ons-page>
+  </ons-bottom-toolbar>
+
 </ons-template>
 </body></html>
