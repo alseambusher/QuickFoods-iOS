@@ -5,7 +5,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
 
-  <title>Intuit Hotel Manager</title>  
+  <title>QuickFood</title>  
   
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
   <link rel="stylesheet" href="styles/app.css"/>
@@ -39,6 +39,9 @@
 
 <ons-template id="menu.html">
   <ons-list>
+    <ons-list-item id="item-blue">
+    QuickFood
+    </ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">
     Take Order
     </ons-list-item>
