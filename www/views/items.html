@@ -1,27 +1,18 @@
-<ons-template id="takeOrder.html">
-  <ons-page ng-controller="TakeOrderController">
+<ons-template id="items.html">
+  <ons-page ng-controller="ListItemsController">
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
       </div>
-      <div class="center">Take Order</div>
+      <div class="center">Items</div>
     </ons-toolbar>
-
-   <input type="text" class="text-input" placeholder="Table No"/><br />
-   <div class="list__header" style="margin:5px;">Add Item</div>
-
-  <ons-row>
-      <input type="search" class="search-input" style="width:70%" placeholder="Item"/>
-      <input type="number" class="text-input" style="width:10%;"placeholder="#"/>
-      <div style="width:10%"><ons-icon icon="ion-plus-circled" style="margin: 4px 0px 4px 0px;font-size:2em;color: #1284ff"></ons-icon></div>
-  </ons-row>
+    
+    <input type="search" class="search-input" placeholder="Search Item"/>
 
    
 	<div class="list__header" style="margin:5px;">Items</div>
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
-
-            
             <span style="width:60%">{{item.title}}</span>
             <span style="width:10%">{{item.quantity}}</span>
             <span ng-if="item.status=='Completed'" style="width:20%;color:green">{{item.status}}</span>
@@ -31,11 +22,5 @@
 	    </span>
           </ons-row>                          
         </ons-list-item>
-  <ons-bottom-toolbar>
-   <ons-tabbar position="bottom">
-	<ons-tab icon="ion-home" label="Bill"></ons-tab>
- 	<ons-tab icon="ion-briefcase" label="Submit"></ons-tab>
-    </ons-tabbar>
-  </ons-bottom-toolbar>
     </ons-page>
 </ons-template>

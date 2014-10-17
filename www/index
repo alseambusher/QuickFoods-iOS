@@ -42,6 +42,7 @@
   <ons-list>
     <ons-list-item id="item-blue">QuickFood</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">Take Order</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('items.html', {closeMenu: true})">Items</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('kitchen.html', {closeMenu: true})">Kitchen</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('history.html', {closeMenu: true})">History</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">Settings</ons-list-item>

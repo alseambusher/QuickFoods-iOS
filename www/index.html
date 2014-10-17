@@ -28,7 +28,7 @@
   <ons-navigator>
     <ons-page>
       <ons-sliding-menu
-                  above-page="takeOrder.html"
+                  above-page="items.html"
                   behind-page="menu.html"       
                   side="left"
                   max-slide-distance="250px"
@@ -42,6 +42,7 @@
   <ons-list>
     <ons-list-item id="item-blue">QuickFood</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">Take Order</ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setAbovePage('items.html', {closeMenu: true})">Items</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('kitchen.html', {closeMenu: true})">Kitchen</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('history.html', {closeMenu: true})">History</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('settings.html', {closeMenu: true})">Settings</ons-list-item>
@@ -122,6 +123,32 @@
         </ons-list-item>
       </ons-list>
   </ons-template>
+<ons-template id="items.html">
+  <ons-page ng-controller="ListItemsController">
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Items</div>
+    </ons-toolbar>
+    
+    <input type="search" class="search-input" placeholder="Search Item"/>
+
+   
+	<div class="list__header" style="margin:5px;">Items</div>
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+          <ons-row>
+            <span style="width:60%">{{item.title}}</span>
+            <span style="width:10%">{{item.quantity}}</span>
+            <span ng-if="item.status=='Completed'" style="width:20%;color:green">{{item.status}}</span>
+            <span ng-if="item.status=='Started'" style="width:20%;color:#1284ff">{{item.status}}</span>
+            <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
+		<ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
+	    </span>
+          </ons-row>                          
+        </ons-list-item>
+    </ons-page>
+</ons-template>
 <ons-template id="kitchen.html">
   <ons-page>
     <ons-toolbar>
@@ -131,7 +158,7 @@
       <div class="center">Kitchen</div>
     </ons-toolbar>
 
-   <input type="text" class="text-input--underbar" placeholder="Add Filter"/><br />
+   <input type="text" class="text-input" placeholder="Add Filter"/><br />
     <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
   </ons-page>
 </ons-template>
@@ -150,7 +177,7 @@
         
 			<br/><br/>
           <ons-list-header>Overall Views</ons-list-header>
-          <button class="button--large--cta" onclick="alert('Feedback recorded!')"> Satsfied Me, reccomend</button>
+          <button class="button--large--cta" onclick="alert('Feedback recorded!')"> Satsfied Me, recommend</button>
 		  <button class="button button--large" onclick="alert('Feedback recorded!')">Un-Happy</button>
         </ons-list>
 	
@@ -192,7 +219,8 @@
       <div class="center">Take Order</div>
     </ons-toolbar>
 
-   <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
+   <input type="text" class="text-input" placeholder="Table No"/><br />
+   <div class="list__header" style="margin:5px;">Add Item</div>
 
   <ons-row>
       <input type="search" class="search-input" style="width:70%" placeholder="Item"/>
@@ -210,6 +238,9 @@
             <span style="width:10%">{{item.quantity}}</span>
             <span ng-if="item.status=='Completed'" style="width:20%;color:green">{{item.status}}</span>
             <span ng-if="item.status=='Started'" style="width:20%;color:#1284ff">{{item.status}}</span>
+            <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
+		<ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
+	    </span>
           </ons-row>                          
         </ons-list-item>
   <ons-bottom-toolbar>
