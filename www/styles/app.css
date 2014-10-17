@@ -1,3 +1,6 @@
+.page__content{
+	background-color:#F7F7F7;
+}
 .left {
 	text-align: left;
 }
@@ -15,10 +18,6 @@
   font-size: 15px;
   font-weight: 500;
 }
-.category-title {
-  font-size: 10px;
-  font-weight: 500;
-}
 .item-desc {
   font-size: 14px;
   color: #666;
@@ -31,14 +30,11 @@
   color: #999;
   float: right;
 }
-input[type="text"] {
-  width:100%;
-  height:40px;
-}
 
-input[type="search"] {
+input[type="search"], input[type="text"], input[type="number"] {
   width:100%;
   height:40px;
+  margin: 0px 5px 0px 5px;
 }
 #item-blue{
   background-color:rgba(8, 28, 169, 0.67);

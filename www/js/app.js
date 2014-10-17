@@ -54,24 +54,28 @@
       
       data.items = [
           { 
-              title: 'Item 1 Title',
-              label: '4h',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              title: 'Veg Manchow Soup',
+              category: 'Veg',
+              status: 'Completed',
+	      quantity: 5
           },
           { 
-              title: 'Another Item Title',
-              label: '6h',
-              desc: 'Ut enim ad minim veniam.'
+              title: 'Gobi Manchurian',
+              category: 'Veg',
+              status: 'Started',
+	      quantity: 2
           },
           { 
-              title: 'Yet Another Item Title',
-              label: '1day ago',
-              desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+              title: 'Chilly Chicken',
+              category: 'Non Veg',
+              status: 'Started',
+	      quantity: 3
           },
           { 
-              title: 'Yet Another Item Title',
-              label: '1day ago',
-              desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+              title: 'Pepsi',
+              category: 'Drinks',
+              status: 'Completed',
+	      quantity: 6
           }
       ]; 
 

@@ -9,39 +9,22 @@
 
    <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
 
-  <ons-row >
-    <ons-col width="10%" align="center">
-      <select ng-model="default_categories" ng-options="category.title for category in categories">
-      </select>
-    </ons-col>
-
-    <ons-col width="70%" align="center">
-      <input type="search" class="search-input" placeholder="Item"/>
-    </ons-col>
-
-    <ons-col width="5%" align="center">
-      <input type="number" class="text-input" placeholder="Quantity"/>
-    </ons-col>
-
-    <ons-col align="center">
-      <ons-icon icon="ion-plus-circled" style="font-size: 32px; width: 1em; color: blue"></ons-icon>
-    </ons-col>
+  <ons-row>
+      <input type="search" class="search-input" style="width:70%" placeholder="Item"/>
+      <input type="number" class="text-input" style="width:10%;"placeholder="#"/>
+      <div style="width:10%"><ons-icon icon="ion-plus-circled" style="margin: 4px 0px 4px 0px;font-size:2em;color: #1284ff"></ons-icon></div>
   </ons-row>
 
    
 	<div class="list__header" style="margin:5px;">Items</div>
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
-            <ons-col width="60px"> 
-              <div class="item-thum"><img src="res/pizza.jpg" style="height:100%;width:100%"/></div>
-            </ons-col>
-            <ons-col>
-              <header>
-                <span class="item-title">{{item.title}}</span>
-                <span class="item-label">{{item.label}}</span>
-              </header>
-              <p class="item-desc">{{item.desc}}</p>
-            </ons-col>
+
+            
+            <span style="width:60%">{{item.title}}</span>
+            <span style="width:10%">{{item.quantity}}</span>
+            <span ng-if="item.status=='Completed'" style="width:20%;color:green">{{item.status}}</span>
+            <span ng-if="item.status=='Started'" style="width:20%;color:#1284ff">{{item.status}}</span>
           </ons-row>                          
         </ons-list-item>
   <ons-bottom-toolbar>
