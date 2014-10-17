@@ -22,8 +22,12 @@
           <ons-row>
             <span style="width:60%">{{item.title}}</span>
             <span style="width:10%">{{item.quantity}}</span>
-            <span ng-if="item.status=='Completed'" style="width:20%;color:green">{{item.status}}</span>
-            <span ng-if="item.status=='Started'" style="width:20%;color:#1284ff">{{item.status}}</span>
+            <span ng-if="item.status=='Completed'" style="width:10%;color:green">
+		<ons-icon icon="ion-checkmark-circled" style="font-size:2em;color:green"></ons-icon>
+	    </span>
+            <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
+		<ons-icon icon="ion-refreshing" style="font-size:2em;color:#1284ff"></ons-icon>
+	    </span>
             <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
 		          <ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
 	         </span>
