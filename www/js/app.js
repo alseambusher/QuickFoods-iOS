@@ -46,6 +46,16 @@
   });
 
 
+  module.controller('KitchenController', function($scope, $data) {
+    // todo: remove this and add actual code
+    $scope.items = $data.ordered_items; 
+    $scope.showDetail = function(index) {
+      var selectedItem = $data.ordered_items[index];
+      $data.selectedItem = selectedItem;
+      $scope.ons.navigator.pushPage('detail.html', {title : selectedItem.title});
+    };
+  });
+
   module.controller('ListItemsController', function($scope, $data) {
     // todo: remove this and add actual code
     $scope.items = $data.items; 
@@ -66,25 +76,43 @@
               title: 'Veg Manchow Soup',
               category: 'Veg',
               status: 'Completed',
-	      quantity: 5
+	            quantity: 5,
+              table_number: 21
           },
           { 
               title: 'Gobi Manchurian',
               category: 'Veg',
               status: 'Started',
-	      quantity: 2
-          },
+	            quantity: 2,
+              table_number: 21
+          }, 
           { 
               title: 'Chilly Chicken',
               category: 'Non Veg',
               status: 'Started',
-	      quantity: 3
+	            quantity: 3,
+              table_number: 21
+          },
+          { 
+              title: 'Paneer Butter Masala',
+              category: 'Veg',
+              status: 'Started',
+              quantity: 3,
+              table_number: 21
+          },
+          { 
+              title: 'Chicken Butter Masala',
+              category: 'Non Veg',
+              status: 'Completed',
+              quantity: 3,
+              table_number: 21
           },
           { 
               title: 'Pepsi',
               category: 'Drinks',
               status: 'Completed',
-	      quantity: 6
+	            quantity: 6,
+              table_number: 21
           }
       ]; 
 

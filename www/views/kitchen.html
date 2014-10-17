@@ -1,13 +1,33 @@
 <ons-template id="kitchen.html">
-  <ons-page>
+  <ons-page ng-controller="KitchenController">
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
       </div>
       <div class="center">Kitchen</div>
     </ons-toolbar>
+   <input type="text" class="text-input--underbar" placeholder="Add Kitchen category"/><br />
+   <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
+  <input type="search" class="search-input" placeholder="Search Item"/><br />
+      
+  <div class="list__header" style="margin:5px;">Items</div>
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+          <ons-row ng-if="item.table_number== 21 && item.category=='Veg'" >
+            <span style="width:50%">{{item.title}}</span>
+            <span style="width:10%">Table: {{item.table_number}}</span>
+            <span style="width:10%">{{item.quantity}}</span>
+            <span ng-if="item.status=='Completed'" style="width:20%;color:green">
+                <ons-icon icon="ion-checkmark-circled" style="font-size:2em;color:green">
+                </ons-icon>
+            </span>
+            <span ng-if="item.status=='Started'" style="width:20%;color:blue">
+                <ons-icon icon="ion-arrow-right-c" style="font-size:2em;color:blue">
+                </ons-icon>
+            </span>
+              
+           
+          </ons-row>                          
+        </ons-list-item>
 
-   <input type="text" class="text-input" placeholder="Add Filter"/><br />
-    <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
   </ons-page>
 </ons-template>
