@@ -92,18 +92,22 @@
           { 
               title: 'Veg Manchow Soup',
               category: 'Veg',
+	      image : 'res/mancho.jpg',
           },
           { 
               title: 'Gobi Manchurian',
               category: 'Veg',
+	      image : 'res/gobi.jpg',
           },
           { 
               title: 'Chilly Chicken',
               category: 'Non Veg',
+	      image : 'res/chilli_chicken.jpg',
           },
           { 
               title: 'Pepsi',
               category: 'Drinks',
+	      image : 'res/pepsi.png',
           }
       ]; 
       
