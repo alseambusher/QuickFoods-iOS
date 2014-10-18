@@ -40,7 +40,7 @@
 
 <ons-template id="menu.html">
   <ons-list>
-    <ons-list-item id="item-blue">QuickFood</ons-list-item>
+    <ons-list-item id="item-blue">QuickFoods</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('takeOrder.html', {closeMenu: true})">Take Order</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('items.html', {closeMenu: true})">Items</ons-list-item>
     <ons-list-item modifier="chevron" onclick="menu.setAbovePage('kitchen.html', {closeMenu: true})">Kitchen</ons-list-item>
@@ -138,9 +138,12 @@
 	<div class="list__header" style="margin:5px;">Items</div>
         <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
           <ons-row>
+	  <!--
             <div class="item-thum" style="margin-right:5px"><img src="{{item.image}}" style="height:100%;width:100%" /></div>
-            <span style="width:50%">{{item.title}}</span>
-            <span style="width:20%">{{item.category}}</span>
+	  -->
+            <span style="width:55%">{{item.title}}</span>
+            <span style="width:25%">{{item.category}}</span>
+            <span style="width:20%">{{item.price}}</span>
 	    </span>
           </ons-row>                          
         </ons-list-item>
@@ -154,26 +157,24 @@
       </div>
       <div class="center">Kitchen</div>
     </ons-toolbar>
-   <input type="text" class="text-input--underbar" placeholder="Add Kitchen category"/><br />
-   <input type="text" class="text-input--underbar" placeholder="Table No"/><br />
+   <input type="text" class="text-input" placeholder="Add Kitchen category"/><br />
+   <input type="text" class="text-input" placeholder="Table No"/><br />
   <input type="search" class="search-input" placeholder="Search Item"/><br />
       
   <div class="list__header" style="margin:5px;">Items</div>
-        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
-          <ons-row ng-if="item.table_number== 21 && item.category=='Veg'" >
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)" ng-if="item.table_number== 21 && item.category=='Veg'">
+          <ons-row>
             <span style="width:50%">{{item.title}}</span>
-            <span style="width:10%">Table: {{item.table_number}}</span>
+            <span style="width:20%">T {{item.table_number}}</span>
             <span style="width:10%">{{item.quantity}}</span>
             <span ng-if="item.status=='Completed'" style="width:20%;color:green">
                 <ons-icon icon="ion-checkmark-circled" style="font-size:2em;color:green">
                 </ons-icon>
             </span>
-            <span ng-if="item.status=='Started'" style="width:20%;color:blue">
-                <ons-icon icon="ion-arrow-right-c" style="font-size:2em;color:blue">
+            <span ng-if="item.status=='Started'" style="width:20%">
+                <ons-icon icon="ion-arrow-right-c" style="font-size:2em;color:#1284ff">
                 </ons-icon>
             </span>
-              
-           
           </ons-row>                          
         </ons-list-item>
 
@@ -247,9 +248,9 @@
 
    
 	<div class="list__header" style="margin:5px;">Items</div>
-        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+        <ons-list-item class="item" ng-repeat="item in items">
           <ons-row>
-            <span style="width:60%">{{item.title}}</span>
+            <span style="width:65%">{{item.title}}</span>
             <span style="width:10%">{{item.quantity}}</span>
             <span ng-if="item.status=='Completed'" style="width:10%;color:green">
 		<ons-icon icon="ion-checkmark-circled" style="font-size:2em;color:green"></ons-icon>
@@ -257,15 +258,15 @@
             <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
 		<ons-icon icon="ion-refreshing" style="font-size:2em;color:#1284ff"></ons-icon>
 	    </span>
-            <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
-		          <ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
-	         </span>
+            <span ng-if="item.status=='Started'" style="margin-left:5px; width:10%;color:#1284ff">
+		<ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
+	    </span>
           </ons-row>                          
         </ons-list-item>
   <ons-bottom-toolbar>
    <ons-tabbar position="bottom">
-	<ons-tab icon="ion-home" label="Bill"></ons-tab>
- 	<ons-tab icon="ion-briefcase" label="Submit"></ons-tab>
+	<ons-tab icon="ion-briefcase" label="Bill"></ons-tab>
+ 	<ons-tab icon="ion-arrow-right-c" label="Submit"></ons-tab>
     </ons-tabbar>
   </ons-bottom-toolbar>
     </ons-page>

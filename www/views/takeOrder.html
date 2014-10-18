@@ -18,9 +18,9 @@
 
    
 	<div class="list__header" style="margin:5px;">Items</div>
-        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+        <ons-list-item class="item" ng-repeat="item in items">
           <ons-row>
-            <span style="width:60%">{{item.title}}</span>
+            <span style="width:65%">{{item.title}}</span>
             <span style="width:10%">{{item.quantity}}</span>
             <span ng-if="item.status=='Completed'" style="width:10%;color:green">
 		<ons-icon icon="ion-checkmark-circled" style="font-size:2em;color:green"></ons-icon>
@@ -28,15 +28,15 @@
             <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
 		<ons-icon icon="ion-refreshing" style="font-size:2em;color:#1284ff"></ons-icon>
 	    </span>
-            <span ng-if="item.status=='Started'" style="width:10%;color:#1284ff">
-		          <ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
-	         </span>
+            <span ng-if="item.status=='Started'" style="margin-left:5px; width:10%;color:#1284ff">
+		<ons-icon icon="ion-close-circled" style="font-size:2em;color:red"></ons-icon>
+	    </span>
           </ons-row>                          
         </ons-list-item>
   <ons-bottom-toolbar>
    <ons-tabbar position="bottom">
-	<ons-tab icon="ion-home" label="Bill"></ons-tab>
- 	<ons-tab icon="ion-briefcase" label="Submit"></ons-tab>
+	<ons-tab icon="ion-briefcase" label="Bill"></ons-tab>
+ 	<ons-tab icon="ion-arrow-right-c" label="Submit"></ons-tab>
     </ons-tabbar>
   </ons-bottom-toolbar>
     </ons-page>

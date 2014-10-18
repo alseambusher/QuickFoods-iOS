@@ -38,11 +38,11 @@
   module.controller('TakeOrderController', function($scope, $data) {
     // todo: remove this and add actual code
     $scope.items = $data.ordered_items; 
-    $scope.showDetail = function(index) {
+    /*$scope.showDetail = function(index) {
       var selectedItem = $data.ordered_items[index];
       $data.selectedItem = selectedItem;
       $scope.ons.navigator.pushPage('detail.html', {title : selectedItem.title});
-    };
+    };*/
   });
 
 
@@ -121,21 +121,35 @@
               title: 'Veg Manchow Soup',
               category: 'Veg',
 	      image : 'res/mancho.jpg',
+	      price : "Rs. 99",
           },
           { 
               title: 'Gobi Manchurian',
               category: 'Veg',
 	      image : 'res/gobi.jpg',
+	      price : "Rs. 80",
           },
           { 
               title: 'Chilly Chicken',
               category: 'Non Veg',
 	      image : 'res/chilli_chicken.jpg',
+	      price : "Rs. 159",
+          },
+          { 
+              title: 'Paneer Butter Masala',
+              category: 'Veg',
+	      price : "Rs. 115",
+          },
+          { 
+              title: 'Chicken Butter Masala',
+              category: 'Non Veg',
+	      price : "Rs. 129",
           },
           { 
               title: 'Pepsi',
               category: 'Drinks',
 	      image : 'res/pepsi.png',
+	      price : "Rs. 20",
           }
       ]; 
       
