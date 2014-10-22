@@ -38,6 +38,13 @@
   module.controller('TakeOrderController', function($scope, $data) {
     // todo: remove this and add actual code
     $scope.items = $data.ordered_items; 
+    $scope.print_bill = function(){
+    	var type = "text/html";
+	var title = "test.html";
+	// TODO make this take current window and apply some customization to bill
+	var fileContent = "<html>Phonegap Print Plugin</html>";
+	window.plugins.PrintPlugin.print(fileContent,function(){console.log('success')},function(){console.log('fail')},"",type,title);
+    };
     /*$scope.showDetail = function(index) {
       var selectedItem = $data.ordered_items[index];
       $data.selectedItem = selectedItem;
