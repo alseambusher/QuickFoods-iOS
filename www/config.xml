@@ -7,6 +7,23 @@
     <author email="ssh.intuit@gmail.com" href="http://phonegap.com">
     	SSH Team
     </author>
+    <feature name="BackgroundServicePlugin">
+      <param name="android-package" value="com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin"/>
+    </feature>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+<!-- To be added within Application nde -->
+<service android:name="com.yournamespace.yourappname.MyService">
+    <intent-filter>         
+        <action android:name="com.yournamespace.yourappname.MyService"/> 
+    </intent-filter>     
+</service>
+
+<receiver android:name="com.red_folder.phonegap.plugin.backgroundservice.BootReceiver">
+    <intent-filter>     
+        <action android:name="android.intent.action.BOOT_COMPLETED"></action>   
+    </intent-filter> 
+</receiver>
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="3.5.0" />
     <preference name="orientation" value="default" />
